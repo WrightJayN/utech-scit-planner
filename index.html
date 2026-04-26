@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCIT Planner</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #121212;
+      --accent: #ff9500;
+      --accent-light: #ffb74d;
+      --text: #ffffff;
+      --text-muted: #aaaaaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      background-image: 
+        linear-gradient(rgba(255, 149, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 149, 0, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+      border-bottom: 3px solid var(--accent);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #ffffff, var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .program-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2rem 1.8rem;
+      transition: all 0.3s ease;
+      border: 1px solid #222;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 15px 30px rgba(255, 149, 0, 0.15);
+    }
+
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .program-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent-light);
+    }
+
+    .program-card a {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .program-card a:hover {
+      background: var(--accent-light);
+      transform: scale(1.05);
+    }
+
+    .coming-soon {
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 1.5rem;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid #222;
+      margin-top: 4rem;
+    }
+
+    .gold-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SCIT Planner</h1>
+    <p class="subtitle">University of Technology Jamaica • School of Computing and Information Technology</p>
+  </header>
+
+  <main>
+    <div class="programs-grid">
+      
+      <!-- CNS -->
+      <div class="program-card">
+        <h2 class="program-title">Computer Network & Security</h2>
+        <p>Plan your CNS journey with course recommendations, prerequisites, and semester planning tools.</p>
+        <a href="https://wrightjayn.github.io/utech-cns-planner/" target="_parent">Open CNS Planner →</a>
+      </div>
+
+      <!-- CS -->
+      <div class="program-card">
+        <h2 class="program-title">Computer Science</h2>
+        <p>Track your CS degree progress, explore electives, and optimize your study plan.</p>
+        <a href="https://wrightjayn.github.io/utech-cs-planner/" target="_parent">Open CS Planner →</a>
+      </div>
+
+      <!-- CIS -->
+      <div class="program-card">
+        <h2 class="program-title">Computing & Information Systems</h2>
+        <p>Comprehensive planning tool for CIS students at UTech.</p>
+        <a href="https://wrightjayn.github.io/utech-cis-planner/" target="_parent">Open CIS Planner →</a>
+      </div>
+
+      <!-- AI -->
+      <div class="program-card">
+        <h2 class="program-title">Artificial Intelligence</h2>
+        <p>Coming soon...</p>
+        <span class="coming-soon">This planner is currently under development.</span>
+      </div>
+
+      <!-- Gaming -->
+      <div class="program-card">
+        <h2 class="program-title">Gaming & Esports</h2>
+        <p>Coming soon...</p>
+        <span class="coming-soon">This planner is currently under development.</span>
+      </div>
+
+      <!-- Animation -->
+      <div class="program-card">
+        <h2 class="program-title">Animation & Visual Effects</h2>
+        <p>Coming soon...</p>
+        <span class="coming-soon">This planner is currently under development.</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p><span class="gold-dot"></span> Built for SCIT Students • UTech Jamaica</p>
+    <p style="margin-top: 0.5rem;">Made with 🔥 by JNW</p>
+  </footer>
+</body>
+</html>
